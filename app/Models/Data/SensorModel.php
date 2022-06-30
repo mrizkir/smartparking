@@ -28,7 +28,9 @@ class SensorModel extends Model
 	*/
 	protected $fillable = [
 		'id',		
+		'sensor_id',			
 		'label',					
+		'status',					
 	];
 	/**
 	 * enable auto_increment.

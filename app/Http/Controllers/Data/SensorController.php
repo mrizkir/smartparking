@@ -25,10 +25,11 @@ class SensorController extends Controller
 		]);
 		
 		$sensor_id = $request->input('sensor_id');
-		$sensor = \DB::create([
+		// dd($sensor_id);
+		$sensor = SensorModel::create([
 			'id'=>Uuid::uuid4()->toString(),
 			'sensor_id' => $sensor_id,
-			'label' => "slot-$sensor",
+			'label' => "slot-$sensor_id",
 			'status' => $request->input('status')
 		]);
 		
