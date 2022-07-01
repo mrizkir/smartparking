@@ -12,13 +12,27 @@ class SensorController extends Controller
 {
 	public function index(Request $request)
 	{
-		$sub_query = \DB::table('sensor')
+		$sensor = \DB::table('sensor AS A')
 		->select(\DB::raw('
-			id,
-			MAX(created_at) AS created_at
-		'))
-		->groupBy('sensor_id');
+			A.id,
+			A.sensor_id,
+			A.label,
+			A.status,
+			A.created_at,
+			A.updated_at
+		'))		 
+		->orderBy('created_at', 'desc')
+		->get();
 
+		return Response()->json([
+			'status'=>'000',
+			'pid'=>'index',
+			'data'=>$sensor,    
+			'message'=>"data sensor berhasil berhasil diperoleh",    
+		], 200); 
+	}
+	public function latest(Request $request, $id)
+	{
 		$sensor = \DB::table('sensor AS A')
 		->select(\DB::raw('
 			A.id,
@@ -28,10 +42,9 @@ class SensorController extends Controller
 			A.created_at,
 			A.updated_at
 		'))
-		->joinSub($sub_query, 'B', function($join){
-			$join->on('A.id','=','B.id');			
-		}) 
-		->orderBy('sensor_id', 'asc')
+		->where('sensor_id', $id)
+		->limit(1)
+		->orderBy('created_at', 'desc')
 		->get();
 
 		return Response()->json([
