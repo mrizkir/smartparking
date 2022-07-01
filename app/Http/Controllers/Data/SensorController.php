@@ -17,7 +17,7 @@ class SensorController extends Controller
 			id,
 			MAX(created_at) AS created_at
 		'))
-		->groupBy('id');
+		->groupBy('sensor_id');
 
 		$sensor = \DB::table('sensor AS A')
 		->select(\DB::raw('
