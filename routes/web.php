@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes(['register'=>'false', 'logout'=>false]);
+
+Route::get('/', [App\Http\Controllers\Frontend\FrontendDashboardController::class, 'index'])->name('frontend-dashboard.index');
 
 Auth::routes();
 
