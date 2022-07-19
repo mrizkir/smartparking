@@ -38,10 +38,10 @@
           <h5 class="card-title m-0">Slot 2</h5>
         </div>
         <div class="card-body">
-          <img src="{!!asset('dist/img/-1.png')!!}" alt="slot 1" style="opacity: .8">
+          <img src="{!!asset('dist/img/-1.png')!!}" alt="slot 2" style="opacity: .8" id="slot-status-2">
         </div>
         <div class="card-footer">
-          <a href="#" class="btn btn-primary">Refresh</a>
+          <a href="javascript:void(0)" class="btn btn-primary" id="btnRefreshSlot2">Refresh</a>
         </div>
       </div>
     </div>  
@@ -76,5 +76,5 @@
 @endsection
 
 @section('page-script')
-
+<script src="{!! asset('/dist/js/pages/frontend.js')!!}"></script>
 @endsection
