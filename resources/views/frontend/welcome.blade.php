@@ -28,7 +28,7 @@
           <img src="{!!asset('dist/img/-1.png')!!}" alt="slot 1" style="opacity: .8">
         </div>
         <div class="card-footer">
-          <a href="#" class="btn btn-primary">Refresh</a>
+          <a href="#" class="btn btn-primary" id="btnRefreshSlot1">Refresh</a>
         </div>
       </div>
     </div>  
@@ -51,10 +51,10 @@
           <h5 class="card-title m-0">Slot 3</h5>
         </div>
         <div class="card-body">
-          <img src="{!!asset('dist/img/0.png')!!}" alt="slot 1" style="opacity: .8">
+          <img src="{!!asset('dist/img/-1.png')!!}" alt="slot 1" style="opacity: .8">
         </div>
         <div class="card-footer">
-          <a href="#" class="btn btn-primary">Refresh</a>
+          <a href="#" class="btn btn-primary" id="btnRefreshSlot3">Refresh</a>
         </div>
       </div>
     </div>  
@@ -64,10 +64,10 @@
           <h5 class="card-title m-0">Slot 4</h5>
         </div>
         <div class="card-body">
-          <img src="{!!asset('dist/img/1.png')!!}" alt="slot 1" style="opacity: .8">
+          <img src="{!!asset('dist/img/-1.png')!!}" alt="slot 1" style="opacity: .8">
         </div>
         <div class="card-footer">
-          <a href="#" class="btn btn-primary">Refresh</a>
+          <a href="#" class="btn btn-primary" id="btnRefreshSlot4">Refresh</a>
         </div>
       </div>
     </div>  
