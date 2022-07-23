@@ -1,5 +1,5 @@
 function changeSlotStatus($, slot) {
-  let slod_id = '#slot-status' + slot;
+  let slod_id = '#slot-status-' + slot;
   $.ajax({
     type: 'get',
     url: 'https://carparking.sttindonesia.ac.id/api/v1/sensor/latest/' + slot,
