@@ -1,5 +1,5 @@
 function changeSlotStatus($, slot) {
-  let slod_id = '#slot-status-' + slot;
+  let slot_id = '#slot-status-' + slot;
   $.ajax({
     type: 'get',
     url: 'https://carparking.sttindonesia.ac.id/api/v1/sensor/latest/' + slot,
@@ -10,13 +10,14 @@ function changeSlotStatus($, slot) {
     },
     success:function(result) {
       let status = result.data[0].status; 
+      console.log(slot_id + ' = ' + status);
       if (status == '1') {
-        $(slod_id).attr('src', 'dist/img/1.png');
+        $(slot_id).attr('src', 'dist/img/1.png');
       } else if (status == '0')
       {
-        $(slod_id).attr('src', 'dist/img/0.png');
+        $(slot_id).attr('src', 'dist/img/0.png');
       } else {
-        $(slod_id).attr('src', 'dist/img/-1.png');
+        $(slot_id).attr('src', 'dist/img/-1.png');
       }
     },
     error:function(xhr, status, error) {
