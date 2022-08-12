@@ -11,9 +11,9 @@ function changeSlotStatus($, slot) {
     success:function(result) {
       let status = result.data[0].status; 
       console.log(slot_id + ' = ' + status);
-      if (status == '1') {
+      if (status == '2') {
         $(slot_id).attr('src', 'dist/img/1.png');
-      } else if (status == '2')
+      } else if (status == '1')
       {
         $(slot_id).attr('src', 'dist/img/0.png');
       } else {
