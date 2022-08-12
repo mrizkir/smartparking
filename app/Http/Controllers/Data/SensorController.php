@@ -65,7 +65,7 @@ class SensorController extends Controller
     $request->validate([
 			'sensor_id'=>'required|numeric',			
 			'label'=>'required',			
-			'status'=>'required|in:0,1',			
+			'status'=>'required|in:0,1,2',			
 		]);
 		
 		$sensor_id = $request->input('sensor_id');
